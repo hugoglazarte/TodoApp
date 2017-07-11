@@ -26,17 +26,18 @@ class Lista extends Component{
     // IMPORTATE VER COMO DECLARAMOS FUNCIONES CON ( => ) en el Foreach
     const agregarDiv = VarListaData.tareas.forEach(
       (value, index) => (
-          listaDiv.push(<li key={index} > {value}</li>))
+        // vamos a agregar un onclick en cada elemento para poder eliminarlo
+          listaDiv.push(<li className="list-group-item" onClick={function(){VarListaData.eliminarTarea(index)}} key={index} > {value}</li>))
         )
 
     // cuando hacemos el return mostramos el contenido de listaDiv dentro del <ul>
     return(
-      <div>
+      <div className="container">
         <h2>Lista</h2>
         <input onKeyPress={ this.enviarTarea.bind(this) }/>
-        <div>
-          <div>
-            <ul>
+        <div className="row">
+          <div className="col-xs-12">
+            <ul className="list-group">
               {listaDiv}
             </ul>
           </div>

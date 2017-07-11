@@ -11,6 +11,10 @@ class ListaData {
       console.log(tarea);
       this.tareas.push(tarea);
   }
+
+  eliminarTarea(index){
+      this.tareas.splice(index, 1)
+  }
 }
 
 var VarListaData = new ListaData;
